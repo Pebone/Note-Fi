@@ -1,0 +1,22 @@
+<h1> Editar Despesa</h1>
+
+<%= form_for @changeset, Routes.expense_path(@conn, :update, id: @expense_id), fn f -> %>
+<div class="row mb-3 d-flex justify-content-center align-items-center flex-column w-100">
+<div class="form-group w-100">
+    <%= text_input f, :type, placeholder: "Nome da despesa", class: "form-control" %>
+    <%= error_tag f, :type %>
+</div>
+
+<div class="form-group w-100">
+    <%= text_input f, :value, placeholder: "Valor", class: "form-control" %>
+    <%= error_tag f, :value %>
+</div>
+
+<div class="form-group w-100">
+    <%= text_input f, :user_id, placeholder: "Valor", class: "form-control" %>
+    <%= error_tag f, :user_id %>
+</div>
+</div>
+<%= submit "Salvar" %>
+
+<% end %>

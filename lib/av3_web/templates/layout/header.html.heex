@@ -1,0 +1,11 @@
+<div style = "height: 5rem; background-color: black" class = "d-flex justify-content-center align-items-center mb-5">
+    <div class = "container" style = "font-size: 25px;">
+      <a href = { Routes.page_path(@conn, :index) } style = "color: yellow;">Note-Fi!</a>
+    </div>
+    <section class="container d-flex justify-content-center align-items-center" style = "gap: 10px; font-size: 15px;">
+      <a href = { Routes.revenue_path(@conn, :index) } style = "color: yellow;">Receitas</a>
+      <a href = { Routes.expense_path(@conn, :index) } style = "color: yellow;">Despesas</a>
+      <a href = { Routes.expense_path(@conn, :new) } style = "color: yellow;">Cadastrar despesa</a>
+      <a href = { Routes.revenue_path(@conn, :new) } style = "color: yellow;">Cadastrar receita</a>
+    </section>
+  </div>

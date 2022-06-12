@@ -1,0 +1,21 @@
+<.form let={f} for={@changeset} action ={@action}>
+  <div class="row mb-3 d-flex justify-content-center align-items-center flex-column w-100">
+    <div class="form-group w-100">
+      <%= label f, :Tipo, class: "form-label", for: "formGroupExampleInput" %> <%=
+      text_input f , :type, class: "form-control", placeholder: "Informe o tipo da receita...", id: "formGroupExampleInput",
+      value: input_value(f, :type) %>
+    </div>
+    <div class="form-group w-100">
+      <%= label f, :Valor, class: "form-label", for: "formGroupExampleInput2" %>
+      <%= text_input f , :value, class: "form-control", placeholder: "Informe o valor da receita...", id:
+      "formGroupExampleInput2", value: input_value(f, :type) %>
+    </div>
+    <div class="form-group w-100">
+      <%= label f, :ID, class: "form-label", for: "formGroupExampleInput2" %>
+      <%= text_input f , :user_id, class: "form-control", placeholder: "Informe o ID da receita...", id:
+      "formGroupExampleInput2", user_id: input_value(f, :type) %>
+    </div>
+    <%= submit "Salvar", class: "btn btn-primary" %>
+  </div>
+  </.form>
+  
