@@ -43,10 +43,10 @@ defmodule Av3Web.ExpenseController do
   def update(conn, %{"id" => id, "expense" => expense}) do
     exp = Repo.get(Expense, id)
     changeset = Expense.changeset(exp, expense)
-    {:ok, _expense} = Repo.update(changeset)
+    {:ok, expense} = Repo.update(changeset)
 
     conn
-    |> put_flash(:info, "Despesa alterada com sucesso!")
+    |> put_flash(:info, "Despesa #{expense.type} alterada com sucesso!")
     |> redirect(to: Routes.expense_path(conn, :index))
   end
 
@@ -58,10 +58,10 @@ defmodule Av3Web.ExpenseController do
 
   def delete(conn, %{"id" => id}) do
     expense = get_expense!(id)
-    {:ok, _expense} = delete_expense(expense)
+    {:ok, expense} = delete_expense(expense)
 
     conn
-    |> put_flash(:info, "Banks deleted successfully.")
+    |> put_flash(:info, "Despesa #{expense.type} deletada com sucesso!.")
     |> redirect(to: Routes.expense_path(conn, :index))
   end
 

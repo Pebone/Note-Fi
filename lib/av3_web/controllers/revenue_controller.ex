@@ -43,10 +43,10 @@ defmodule Av3Web.RevenueController do
   def update(conn, %{"id" => id, "revenue" => revenue}) do
     rev = Repo.get(Revenue, id)
     changeset = Revenue.changeset(rev, revenue)
-    {:ok, _revenue} = Repo.update(changeset)
+    {:ok, revenue} = Repo.update(changeset)
 
     conn
-    |> put_flash(:info, "Receita alterada com sucesso!")
+    |> put_flash(:info, "Receita #{revenue.type} alterada com sucesso!")
     |> redirect(to: Routes.revenue_path(conn, :index))
   end
 
@@ -58,10 +58,10 @@ defmodule Av3Web.RevenueController do
 
   def delete(conn, %{"id" => id}) do
     revenue = get_revenue!(id)
-    {:ok, _revenue} = delete_revenue(revenue)
+    {:ok, revenue} = delete_revenue(revenue)
 
     conn
-    |> put_flash(:info, "Receita deletada com sucesso.")
+    |> put_flash(:info, "Receita #{revenue.type} deletada com sucesso.")
     |> redirect(to: Routes.revenue_path(conn, :index))
   end
 
