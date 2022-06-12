@@ -6,6 +6,8 @@ defmodule Av3.User do
     field :name, :string
     field :password, :string
     field :password_confirmation, :string, virtual: true
+    has_many :revenue, Av3.Revenue
+    has_many :expense, Av3.Expense
 
     timestamps()
   end
