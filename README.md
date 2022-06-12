@@ -1,12 +1,12 @@
 # Av3 - PROGRAMAÇÃO FUNCIONAL
 
-# Note-Fi
+## Note-Fi
 
 Integrante:
 
   * Davi Pereira Araújo de Brito Cardoso - 1810501
 
-## Requisitos do Trabalho
+### Requisitos do Trabalho
 
   * Projeto possui as entidades User, Receita e Despesa.
   * Projeto configurado com o framework *BOOTSTRAP* para customização de layout - "A aplicação deve possuir um layout customizado baseado em bootstrap ou um outro framework
